@@ -22,8 +22,11 @@ class SelectorConfig {
   /// [icon], uses the choosen icon
   final Icon? icon;
 
-  /// [icon], uses boxDecoration
+  /// [BoxDecoration], uses boxDecoration
   final BoxDecoration? boxDecoration;
+
+  /// [EdgeInsets], uses padding
+  final EdgeInsets? padding;
 
   /// [countryComparator], sort the country list according to the comparator.
   ///
@@ -45,6 +48,7 @@ class SelectorConfig {
     this.useEmoji = false,
     this.icon,
     this.boxDecoration,
+    this.padding,
     this.countryComparator,
     this.setSelectorButtonAsPrefixIcon = false,
     this.leadingPadding,

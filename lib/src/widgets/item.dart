@@ -13,6 +13,7 @@ class Item extends StatelessWidget {
   final bool trailingSpace;
   final Icon? icon;
   final BoxDecoration? boxDecoration;
+  final EdgeInsets? padding;
 
   const Item({
     Key? key,
@@ -25,6 +26,7 @@ class Item extends StatelessWidget {
     this.trailingSpace = true,
     this.icon,
     this.boxDecoration,
+    this.padding,
   }) : super(key: key);
 
   @override
@@ -34,7 +36,7 @@ class Item extends StatelessWidget {
       dialCode = dialCode.padRight(5, "   ");
     }
     return Container(
-      padding: EdgeInsets.all(12),
+      padding: padding,
       decoration: boxDecoration,
       child: Row(
         textDirection: TextDirection.ltr,

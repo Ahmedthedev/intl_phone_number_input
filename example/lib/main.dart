@@ -46,6 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 print(value);
               },
               selectorConfig: SelectorConfig(
+                padding:EdgeInsets.all(12),
                 boxDecoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(4),),
                   border: Border.all(color: Colors.white),
