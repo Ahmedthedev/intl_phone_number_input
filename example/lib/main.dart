@@ -29,36 +29,31 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-
-  final TextEditingController controller = TextEditingController();
-  String initialCountry = 'NG';
-  PhoneNumber number = PhoneNumber(isoCode: 'NG');
+  PhoneNumber number = PhoneNumber(isoCode: 'FR');
 
   @override
   Widget build(BuildContext context) {
     return Form(
-      key: formKey,
       child: Container(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             InternationalPhoneNumberInput(
               onInputChanged: (PhoneNumber number) {
-                print(number.phoneNumber);
+               number = number;
               },
               onInputValidated: (bool value) {
                 print(value);
               },
               selectorConfig: SelectorConfig(
+                trailingSpace: false,
                 icon: Icon(Icons.arrow_drop_down),
                 selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
               ),
               ignoreBlank: false,
               autoValidateMode: AutovalidateMode.disabled,
-              selectorTextStyle: TextStyle(color: Colors.black),
+              selectorTextStyle: TextStyle(color: Colors.white),
               initialValue: number,
-              textFieldController: controller,
               formatInput: false,
               keyboardType:
                   TextInputType.numberWithOptions(signed: true, decimal: true),
@@ -66,24 +61,6 @@ class _MyHomePageState extends State<MyHomePage> {
               onSaved: (PhoneNumber number) {
                 print('On Saved: $number');
               },
-            ),
-            ElevatedButton(
-              onPressed: () {
-                formKey.currentState.validate();
-              },
-              child: Text('Validate'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                getPhoneNumber('+15417543010');
-              },
-              child: Text('Update'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                formKey.currentState.save();
-              },
-              child: Text('Save'),
             ),
           ],
         ),
@@ -102,7 +79,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void dispose() {
-    controller?.dispose();
     super.dispose();
   }
 }

@@ -32,6 +32,10 @@ class Item extends StatelessWidget {
       dialCode = dialCode.padRight(5, "   ");
     }
     return Container(
+      padding: EdgeInsets.all(12),
+      decoration: BoxDecoration(
+          border: Border.all(color: Colors.white)
+      ),
       child: Row(
         textDirection: TextDirection.ltr,
         mainAxisAlignment: MainAxisAlignment.start,
@@ -44,11 +48,11 @@ class Item extends StatelessWidget {
             useEmoji: useEmoji,
           ),
           SizedBox(width: 12.0),
-          Text(
-            '$dialCode',
-            textDirection: TextDirection.ltr,
-            style: textStyle,
-          ),
+             Text(
+              '$dialCode',
+              textDirection: TextDirection.ltr,
+              style: TextStyle(backgroundColor: Colors.blue),
+            ),
           icon ?? SizedBox.shrink(),
         ],
       ),
