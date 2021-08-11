@@ -12,6 +12,7 @@ class Item extends StatelessWidget {
   final double? leadingPadding;
   final bool trailingSpace;
   final Icon? icon;
+  final BoxDecoration? boxDecoration;
 
   const Item({
     Key? key,
@@ -23,6 +24,7 @@ class Item extends StatelessWidget {
     this.leadingPadding = 12,
     this.trailingSpace = true,
     this.icon,
+    this.boxDecoration,
   }) : super(key: key);
 
   @override
@@ -33,10 +35,7 @@ class Item extends StatelessWidget {
     }
     return Container(
       padding: EdgeInsets.all(12),
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(4),),
-          border: Border.all(color: Colors.white),
-      ),
+      decoration: boxDecoration,
       child: Row(
         textDirection: TextDirection.ltr,
         mainAxisAlignment: MainAxisAlignment.start,

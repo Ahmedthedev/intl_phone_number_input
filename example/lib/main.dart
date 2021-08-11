@@ -46,6 +46,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 print(value);
               },
               selectorConfig: SelectorConfig(
+                boxDecoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(4),),
+                  border: Border.all(color: Colors.white),
+                ),
                 trailingSpace: false,
                 icon: Icon(Icons.arrow_drop_down),
                 selectorType: PhoneInputSelectorType.BOTTOM_SHEET,

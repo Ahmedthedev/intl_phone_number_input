@@ -22,6 +22,9 @@ class SelectorConfig {
   /// [icon], uses the choosen icon
   final Icon? icon;
 
+  /// [icon], uses boxDecoration
+  final BoxDecoration? boxDecoration;
+
   /// [countryComparator], sort the country list according to the comparator.
   ///
   /// Sorting is disabled by default
@@ -41,6 +44,7 @@ class SelectorConfig {
     this.showFlags = true,
     this.useEmoji = false,
     this.icon,
+    this.boxDecoration,
     this.countryComparator,
     this.setSelectorButtonAsPrefixIcon = false,
     this.leadingPadding,

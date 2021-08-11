@@ -49,6 +49,7 @@ class SelectorButton extends StatelessWidget {
                     leadingPadding: selectorConfig.leadingPadding,
                     trailingSpace: selectorConfig.trailingSpace,
                     textStyle: selectorTextStyle,
+                    boxDecoration: selectorConfig.boxDecoration,
                   ),
                   value: country,
                   items: mapCountryToDropdownItem(countries),
@@ -63,6 +64,7 @@ class SelectorButton extends StatelessWidget {
                 trailingSpace: selectorConfig.trailingSpace,
                 textStyle: selectorTextStyle,
                 icon: selectorConfig.icon,
+      boxDecoration: selectorConfig.boxDecoration,
               )
         : MaterialButton(
             key: Key(TestHelper.DropdownButtonKeyValue),
@@ -95,6 +97,7 @@ class SelectorButton extends StatelessWidget {
                 trailingSpace: selectorConfig.trailingSpace,
                 textStyle: selectorTextStyle,
                 icon: selectorConfig.icon,
+                boxDecoration: selectorConfig.boxDecoration,
               ),
             ),
           );
@@ -113,6 +116,7 @@ class SelectorButton extends StatelessWidget {
           useEmoji: selectorConfig.useEmoji,
           textStyle: selectorTextStyle,
           icon: selectorConfig.icon,
+          boxDecoration: selectorConfig.boxDecoration,
           withCountryNames: false,
         ),
       );
