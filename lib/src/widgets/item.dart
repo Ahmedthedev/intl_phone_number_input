@@ -34,7 +34,8 @@ class Item extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(12),
       decoration: BoxDecoration(
-          border: Border.all(color: Colors.white)
+          borderRadius: BorderRadius.all(Radius.circular(4),),
+          border: Border.all(color: Colors.white),
       ),
       child: Row(
         textDirection: TextDirection.ltr,
@@ -51,7 +52,7 @@ class Item extends StatelessWidget {
              Text(
               '$dialCode',
               textDirection: TextDirection.ltr,
-              style: TextStyle(backgroundColor: Colors.blue),
+              style: textStyle,
             ),
           icon ?? SizedBox.shrink(),
         ],
