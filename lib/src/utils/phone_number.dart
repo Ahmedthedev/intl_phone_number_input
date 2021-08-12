@@ -51,7 +51,7 @@ class PhoneNumber extends Equatable {
 
   @override
   String toString() {
-    return phoneNumber!;
+    return phoneNumber ?? "";
   }
 
   /// Returns [PhoneNumber] which contains region information about

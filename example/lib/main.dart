@@ -29,11 +29,15 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
+  final TextEditingController controller = TextEditingController();
   PhoneNumber number = PhoneNumber(isoCode: 'FR');
 
   @override
   Widget build(BuildContext context) {
     return Form(
+      key: formKey,
       child: Container(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -46,19 +50,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 print(value);
               },
               selectorConfig: SelectorConfig(
-                padding:EdgeInsets.all(12),
-                boxDecoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(4),),
-                  border: Border.all(color: Colors.white),
-                ),
-                trailingSpace: false,
                 icon: Icon(Icons.arrow_drop_down),
                 selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
               ),
               ignoreBlank: false,
               autoValidateMode: AutovalidateMode.disabled,
-              selectorTextStyle: TextStyle(color: Colors.white),
+              selectorTextStyle: TextStyle(color: Colors.black),
               initialValue: number,
+              textFieldController: controller,
               formatInput: false,
               keyboardType:
                   TextInputType.numberWithOptions(signed: true, decimal: true),
@@ -84,6 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void dispose() {
+    controller?.dispose();
     super.dispose();
   }
 }
